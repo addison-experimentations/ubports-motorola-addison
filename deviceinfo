@@ -6,7 +6,7 @@ deviceinfo_os_version="9.0.0"
 deviceinfo_os_patch_level="2018-12"
 deviceinfo_kernel_source="https://github.com/addison-experimentations/android_kernel_motorola_msm8953.git"
 deviceinfo_kernel_source_branch="halium-9.0"
-deviceinfo_kernel_defconfig="vendor/addison_halium_defconfig"
+deviceinfo_kernel_defconfig="addison_defconfig"
 
 deviceinfo_kernel_cmdline="console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M buildvariant=userdebug"
 deviceinfo_kernel_clang_compile="true"
