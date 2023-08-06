@@ -1,14 +1,8 @@
-# Ubuntu Touch device tree for the Xiaomi Redmi Note 7 Pro (violet)
+# Ubuntu Touch device tree for the Moto Z Play (addison)
 
 This is based on Halium 9.0, and uses the mechanism described in [this
 page](https://github.com/ubports/porting-notes/wiki/GitLab-CI-builds-for-devices-based-on-halium_arm64-(Halium-9)).
 
-This project can be built manually (see the instructions below) or you can
-download the ready-made artifacts from gitlab: take the [latest
-archive](https://gitlab.com/ubports/community-ports/android9/xiaomi-redmi-note-7-pro/xiaomi-violet/-/jobs/artifacts/master/download?job=devel-flashable),
-unpack the `artifacts.zip` file (make sure that all files are created inside a
-directory called `out/`, then follow the instructions in the
-[Install](#install) section.
 
 
 ## How to build
@@ -18,7 +12,7 @@ To manually build this project, follow these steps:
 ```bash
 export HOSTCC=gcc-9  # the build breaks with gcc-11
 ./build.sh -b bd  # bd is the name of the build directory
-./build/prepare-fake-ota.sh out/device_violet.tar.xz ota
+./build/prepare-fake-ota.sh out/device_addison.tar.xz ota
 ./build/system-image-from-ota.sh ota/ubuntu_command out
 ```
 
@@ -43,8 +37,6 @@ fastboot flash splash out/splash.img
 
 ## Building the vendor image
 
-The vendor image is available as a downloadable blob
-[here](https://github.com/ubuntu-touch-violet/ubuntu-touch-violet/releases/tag/20210510).
 If you'd like to build it yourself, the steps are quite similar to those needed
 to build the system image with Halium:
 
@@ -59,8 +51,8 @@ to build the system image with Halium:
     git clone https://gitlab.com/ubuntu-touch-xiaomi-violet/fm-bridge.git vendor/ubports/fm-bridge
 ```
 4. Apply hybris patches: `hybris-patches/apply-patches.sh --mb`
-5. `source build/envsetup.sh && breakfast violet`
+5. `source build/envsetup.sh && breakfast addison`
 6. `mka vendorimage`
 
-This will generate a file `our/target/product/violet/vendor.img` that can be
+This will generate a file `our/target/product/addison/vendor.img` that can be
 flashed with `fastboot flash vendor vendor.img`.
